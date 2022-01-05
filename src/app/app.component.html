@@ -1,0 +1,35 @@
+<h4>Flopchooser</h4>
+
+<div style="margin-bottom:2rem" >
+  <p>Which movie has a lower IMDB rating?</p>
+  <p [hidden]="!hasChosen">
+
+    <span [hidden]="!isCorrect">Correct!</span>
+    <span [hidden]="isCorrect">Incorrect!</span>
+    
+  </p>
+  <button 
+  [hidden]="!hasChosen" 
+  (click)="onPlayAgainClicked()"
+  class="btn btn-primary">Play Again</button>
+   
+  
+</div>
+  
+ 
+
+<div style="display:flex; justify-content:space-around">
+  <app-movie-selector 
+    [movie]="flops.first"
+    (select)="onFirstSelected()"
+    ></app-movie-selector>
+
+  <app-movie-selector 
+    [movie]="flops.second"
+    (select)="onSecondSelected()"
+    ></app-movie-selector>
+ 
+  
+ 
+
+</div>
